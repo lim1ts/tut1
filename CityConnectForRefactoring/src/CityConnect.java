@@ -258,13 +258,13 @@ public class CityConnect {
 		String newEndLocation = parameters[PARAM_POSITION_END_LOCATION];
 		String distance = parameters[PARAM_POSITION_DISTANCE];
 
-		if (!isPositiveNonZeroInt(distance)){
+		if (!isPositiveNonZeroInt(distance)) {
 			return String.format(MESSAGE_INVALID_FORMAT, userCommand);
 		}
 
 		int slotPosition = location(newStartLocation, newEndLocation);
 
-		if (slotPosition == SLOT_UNAVAILABLE){
+		if (slotPosition == SLOT_UNAVAILABLE) {
 			return MESSAGE_NO_SPACE;
 		}
 
