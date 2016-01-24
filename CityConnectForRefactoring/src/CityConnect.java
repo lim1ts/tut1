@@ -109,10 +109,10 @@ public class CityConnect {
 	 * that is referenced by the method above.
 	 * ====================================================================
 	 */
+	
 	/**
 	 * This operation waits for the user to input a command.
 	 */
-	
 	public static void waitForCommand(){
 		while (true) {
 			System.out.print("Enter command:");
@@ -131,22 +131,23 @@ public class CityConnect {
 		if (userCommand.trim().equals("")) {
 			return String.format(MESSAGE_INVALID_FORMAT, userCommand);
 		}
+		
 		String commandTypeString = getFirstWord(userCommand);
 
 		COMMAND_TYPE commandType = determineCommandType(commandTypeString);
 
 		switch (commandType) {
-		case ADD_ROUTE:
-			return addRoute(userCommand);
-		case GET_DISTANCE:
-			return getDistance(userCommand);
-		case INVALID:
-			return String.format(MESSAGE_INVALID_FORMAT, userCommand);
-		case EXIT:
-			System.exit(0);
-		default:
-			//throw an error if the command is not recognized
-			throw new Error("Unrecognized command type");
+			case ADD_ROUTE :
+				return addRoute(userCommand);
+			case GET_DISTANCE :
+				return getDistance(userCommand);
+			case INVALID :
+				return String.format(MESSAGE_INVALID_FORMAT, userCommand);
+			case EXIT :
+				System.exit(0);
+			default :
+				//throw an error if the command is not recognized
+				throw new Error("Unrecognized command type");
 		}
 		/*
 		 * ==============NOTE TO STUDENTS======================================
