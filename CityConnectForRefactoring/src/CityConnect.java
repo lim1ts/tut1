@@ -99,13 +99,7 @@ public class CityConnect {
 	 */
 	public static void main(String[] args) {
 		showToUser(WELCOME_MESSAGE);
-		while (true) {
-			System.out.print("Enter command:");
-			String command = scanner.nextLine();
-			String userCommand = command;
-			String feedback = executeCommand(userCommand);
-			showToUser(feedback);
-		}
+		waitForCommand();
 	}
 
 	/*
@@ -115,7 +109,20 @@ public class CityConnect {
 	 * that is referenced by the method above.
 	 * ====================================================================
 	 */
-
+	/**
+	 * This operation waits for the user to input a command.
+	 */
+	
+	public static void waitForCommand(){
+		while (true) {
+			System.out.print("Enter command:");
+			String command = scanner.nextLine();
+			String userCommand = command;
+			String feedback = executeCommand(userCommand);
+			showToUser(feedback);
+		}
+	}
+	
 	private static void showToUser(String text) {
 		System.out.println(text);
 	}
